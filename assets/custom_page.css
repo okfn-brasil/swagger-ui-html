@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+    html
+    {
+        box-sizing: border-box;
+        overflow: -moz-scrollbars-vertical;
+        overflow-y: scroll;
+    }
+    *,
+    *:before,
+    *:after
+    {
+        box-sizing: inherit;
+    }
+
+    body {
+      margin:0;
+      background: #fafafa;
+    }
+
+    .swagger-ui .Resizer.vertical.disabled {display:none}
+
+    .swagger-ui html{box-sizing:border-box}
+    .swagger-ui *,.swagger-ui :after,.swagger-ui :before{box-sizing:inherit}.swagger-ui body{margin:0;background:#fafafa}.swagger-ui .wrapper{width:100%;max-width:1460px;margin:0 auto;padding:0 20px}.swagger-ui .opblock-tag-section{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.swagger-ui .opblock-tag{display:-webkit-box;display:-ms-flexbox;display:flex;padding:10px 20px 10px 10px;cursor:pointer;transition:all .2s;border-bottom:1px solid rgba(59,65,81,.3);-webkit-box-align:center;-ms-flex-align:center;align-items:center}.swagger-ui .opblock-tag:hover{background:rgba(0,0,0,.02)}.swagger-ui .opblock-tag{font-size:24px;margin:0 0 5px;font-family:Titillium Web,sans-serif;color:#3b4151}.swagger-ui .opblock-tag.no-desc span{-webkit-box-flex:1;-ms-flex:1;flex:1}.swagger-ui .opblock-tag svg{transition:all .4s}.swagger-ui .opblock-tag small{font-size:14px;font-weight:400;padding:0 10px;-webkit-box-flex:1;-ms-flex:1;flex:1;font-family:Open Sans,sans-serif;color:#3b4151}.swagger-ui .parаmeter__type{font-size:12px;padding:5px 0;font-family:Source Code Pro,monospace;font-weight:600;color:#3b4151}.swagger-ui .view-line-link{position:relative;top:3px;width:20px;margin:0 5px;cursor:pointer;transition:all .5s}.swagger-ui .opblock{margin:0 0 15px;border:1px solid #000;border-radius:4px;box-shadow:0 0 3px rgba(0,0,0,.19)}.swagger-ui .opblock.is-open .opblock-summary{border-bottom:1px solid #000}.swagger-ui .opblock .opblock-section-header{padding:8px 20px;background:hsla(0,0%,100%,.8);box-shadow:0 1px 2px rgba(0,0,0,.1)}.swagger-ui .opblock .opblock-section-header,.swagger-ui .opblock .opblock-section-header label{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.swagger-ui .opblock .opblock-section-header label{font-size:12px;font-weight:700;margin:0;font-family:Titillium Web,sans-serif;color:#3b4151}.swagger-ui .opblock .opblock-section-header label span{padding:0 10px 0 0}.swagger-ui .opblock .opblock-section-header h4{font-size:14px;margin:0;-webkit-box-flex:1;-ms-flex:1;flex:1;font-family:Titillium Web,sans-serif;color:#3b4151}.swagger-ui .opblock .opblock-summary-method{font-size:14px;font-weight:700;min-width:80px;padding:6px 15px;text-align:center;border-radius:3px;background:#000;text-shadow:0 1px 0 rgba(0,0,0,.1);font-family:Titillium Web,sans-serif;color:#fff}.swagger-ui .opblock .opblock-summary-operation-id,.swagger-ui .opblock .opblock-summary-path,.swagger-ui .opblock .opblock-summary-path__deprecated{font-size:16px;display:-webkit-box;display:-ms-flexbox;display:flex;padding:0 10px;font-family:Source Code Pro,monospace;font-weight:600;color:#3b4151;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.swagger-ui .opblock .opblock-summary-operation-id .view-line-link,.swagger-ui .opblock .opblock-summary-path .view-line-link,.swagger-ui .opblock .opblock-summary-path__deprecated .view-line-link{position:relative;top:2px;width:0;margin:0;cursor:pointer;transition:all .5s}.swagger-ui .opblock .opblock-summary-operation-id:hover .view-line-link,.swagger-ui .opblock .opblock-summary-path:hover .view-line-link,.swagger-ui .opblock .opblock-summary-path__deprecated:hover .view-line-link{width:18px;margin:0 5px}.swagger-ui .opblock .opblock-summary-path__deprecated{text-decoration:line-through}.swagger-ui .opblock .opblock-summary-operation-id{font-size:14px}.swagger-ui .opblock .opblock-summary-description{font-size:13px;-webkit-box-flex:1;-ms-flex:1;flex:1;font-family:Open Sans,sans-serif;color:#3b4151}.swagger-ui .opblock .opblock-summary{display:-webkit-box;display:-ms-flexbox;display:flex;padding:5px;cursor:pointer;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.swagger-ui .opblock.opblock-post{border-color:#49cc90;background:rgba(73,204,144,.1)}.swagger-ui .opblock.opblock-post .opblock-summary-method{background:#49cc90}.swagger-ui .opblock.opblock-post .opblock-summary{border-color:#49cc90}.swagger-ui .opblock.op

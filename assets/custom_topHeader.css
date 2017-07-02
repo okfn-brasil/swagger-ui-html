@@ -1,0 +1,60 @@
+    /*  BRAND HEADER */
+    .header h1{font-size:16px;line-height:1em}
+    .header h1{text-transform:uppercase}
+    .header h1{margin:0;padding:17px 0;font-weight:700;letter-spacing:.23em}
+    .header{border-top-color:#02a5e0}
+    .header{border-top-color:#000}
+    .header a:focus,.header a:hover{color:#69b93b;text-decoration:none}
+    #header-brand a, #header-brand a:hover {color:#02a5e0}
+    #header-brand{overflow:auto}
+    .header {
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #333;
+        border-top: 4px solid #69b93b;
+        margin: 0;
+    }
+    @font-face{ /* limpar! */
+    font-family:FontAwesome;
+    src:url(https://br.okfn.org/wp-content/themes/wordpress-theme/assets/fonts/fontawesome-webfont.eot?v=4.3.0);
+    src:url(https://br.okfn.org/wp-content/themes/wordpress-theme/assets/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0) format('embedded-opentype'),url(https://br.okfn.org/wp-content/themes/wordpress-theme/assets/fonts/fontawesome-webfont.woff2?v=4.3.0) format('woff2'),url(https://br.okfn.org/wp-content/themes/wordpress-theme/assets/fonts/fontawesome-webfont.woff?v=4.3.0) format('woff'),url(https://br.okfn.org/wp-content/themes/wordpress-theme/assets/fonts/fontawesome-webfont.ttf?v=4.3.0) format('truetype'),url(https://br.okfn.org/wp-content/themes/wordpress-theme/assets/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular) format('svg');
+    font-weight:400;
+    font-style:normal
+    }
+
+    .fa-lg {
+        font-size: 1.33333333em;
+        line-height: .75em;
+        vertical-align: -15%;
+    }
+
+    .fa {
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transform: translate(0,0);
+    }
+
+    .fa, .fa-stack {
+        display: inline-block;
+    }
+
+    .social-links a {
+        color: #333;
+        width: 32px;
+        height: 32px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 16px;
+        border: 1px solid #333;
+        margin-left: 10px;
+    }
+    .social-links a {
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    #nav-social {vertical-align:middle; margin:11px 0 11px 5px}
