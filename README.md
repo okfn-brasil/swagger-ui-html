@@ -6,11 +6,11 @@ Adapted from [swagger-ui/dist](https://github.com/swagger-api/swagger-ui/blob/ma
 
 ## Configurations
 
-At the final `<script>` in [index.htm](index.htm), change the variables `hash_URLs` and `hash_default`.
+At the final `<script>` in [index.htm](index.htm), change the variables `hash_URLs` and `hash_default`. At HTML's body, change options of the `headerSelect`. 
 
 ## Using
 
-Clone `index.htm` and `assets/` colder in a server folder, and use its URL:
+Clone `index.htm` and `assets/` in a server folder, and use its URL:
 
 * default OpenAPI descriptor (as `hash_default`), example http://api.ok.org.br
 
