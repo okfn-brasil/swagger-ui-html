@@ -1,0 +1,135 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Collector of Brazilian government documents (Diario Oficial)",
+    "version": "0.0.1",
+    "title": "Trazdia",
+    "termsOfService": "",
+    "contact": {
+      "email": "mzanchi@gmail.com"
+    },
+    "license": {
+      "name": "GNU General Public License v3.0",
+      "url": "https://github.com/okfn-brasil/trazdia/blob/master/LICENSE"
+    }
+  },
+  "host": "trazdia.herokuapp.com",
+  "basePath": "/collector",
+  "tags": [
+    {
+      "name": "meta data",
+      "description": "Get index information about the contents of each publication."
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/br": {
+      "get": {
+        "tags": [
+          "meta data"
+        ],
+        "summary": "Get list of available publications",
+        "description": "",
+        "operationId": "list_publications",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Diario"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/br/sp/exec1/{journal_date}": {
+      "get": {
+        "tags": [
+          "meta data"
+        ],
+        "summary": "Get index for SP",
+        "description": "Get index of a given edition of the exec1 section of the DO of the State of SP",
+        "operationId": "list_publications",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": {
+          "name": "journal_date",
+          "in": "path",
+          "description": "date of the journal",
+          "required": "true",
+          "type": "string"
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Diario"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Diario": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string",
+          "description": "official name of the publication"
+        },
+        "address": {
+          "type": "string",
+          "description": "internal address"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "status": {
+          "type": "string",
+          "description": "collector status",
+          "enum": [
+            "live",
+            "offline",
+            "todo"
+          ]
+        }
+      }
+    },
+    "ApiResponse": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}
