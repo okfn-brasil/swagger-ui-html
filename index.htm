@@ -34,6 +34,7 @@
 	  <nav id="header-nav" role="navigation" class="hidden-xs">
     API:  <select id="headerSelect" onchange="swaggerReload(this.value)">
         <option value="issn">ISSN-L resolver</option>
+	<option value="getfrag">getfrag resolver</option>
         <option value="petstore">Petstore demo</option>
         <option value="trazdia">trazdia</option>
       </select>
@@ -85,7 +86,8 @@
 <script>
 // CONFIGURAtIONS:
 var hash_URLs = {
-    "issn":    "https://raw.githubusercontent.com/okfn-brasil/ISSN-L-Resolver/master/ISSN-L-resolver-swagger.yaml"
+    "issn":     "https://raw.githubusercontent.com/okfn-brasil/ISSN-L-Resolver/master/ISSN-L-resolver-swagger.yaml"
+    ,"getfrag": "https://raw.githubusercontent.com/okfn-brasil/swagger-ui-html/master/openApi_dumps/getfrag-v1.0.0.json"
     ,"petstore":"http://petstore.swagger.io/v2/swagger.json"
     ,"trazdia": "https://raw.githubusercontent.com/okfn-brasil/trazdia/master/trazdia-api.json"
 };
