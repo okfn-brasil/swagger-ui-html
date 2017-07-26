@@ -1,0 +1,258 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Fragment Resolver",
+    "version": "1.1.0",
+    "description": "To get the fragment content in a specified document with valid [DTD](https://en.wikipedia.org/wiki/Document_type_definition) structure.\n\nSee general methodology at Krauss & Lima (2003) and LexML standards v1.0 at Lima & Ciciliati (2008).  Basic syntax, two flavors:\n![](https://raw.githubusercontent.com/okfn-brasil/trazdia/master/docs/assets/fragId-syntax-diagram/fig1.png)\n\nSee OKBr (2017) for more details.\n\n### References\n\n* Krauss & Lima (2003) *\"Notação Canônica para a Citação de Trechos de Normas Estatutárias Jurídicas Brasileiras\"*, http://www.nilc.icmc.usp.br/til/til2003/poster/krauss_Lima2.pdf\n\n* Lima & Ciciliati (2008) *\"LexML Brasil, Parte 3 – LexML XML Schema\"*, http://projeto.lexml.gov.br/documentacao/Parte-3-XML-Schema.pdf\n\n* OKBr (2017), http://git.ok.org.br/trazdia/blob/master/docs/fragId.md\n",
+    "contact": {
+      "email": "peter@ok.org.br"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "tags": [
+    {
+      "name": "retriever",
+      "description": "retrieves the fragment."
+    }
+  ],
+  "parameters": {
+    "docId": {
+      "name": "docId",
+      "in": "path",
+      "description": "document URN or identifier.",
+      "required": true,
+      "type": "string"
+    },
+    "level": {
+      "name": "level",
+      "in": "path",
+      "description": "level to stop in the ToC hierarchy.",
+      "required": true,
+      "type": "integer"
+    },
+    "fragId": {
+      "name": "fragId",
+      "in": "path",
+      "description": "fragment identifier.",
+      "required": true,
+      "type": "string"
+    }
+  },
+  "paths": {
+    "/getfrag/{docId}/{fragId}": {
+      "get": {
+        "tags": [
+          "retriever"
+        ],
+        "summary": "Retrieve the XML content of the fragment.",
+        "operationId": "getFragXmlById",
+        "description": "Retrieves the specified document's fragment. Status 404 occurs when document not exists. Status 405 when  fragment not exist.  \n",
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/docId"
+          },
+          {
+            "$ref": "#/parameters/fragId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "results matching criteria",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "description": "has not found the input docId or fragId."
+          },
+          "416": {
+            "description": "document's DTD not compatible with fragment standards."
+          }
+        }
+      }
+    },
+    "/getfrag/{docId}": {
+      "get": {
+        "tags": [
+          "retriever"
+        ],
+        "summary": "Retrieve the list of all possible fragment-IDs of the documents.",
+        "operationId": "getFragIds",
+        "description": "Retrieves the list of IDs of the specified document.  \n",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/docId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "results matching criteria",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "description": "has not found the input docId."
+          },
+          "416": {
+            "description": "document's DTD not compatible with fragment standards."
+          }
+        }
+      }
+    },
+    "/getfrag-info/{docId}": {
+      "get": {
+        "tags": [
+          "retriever"
+        ],
+        "summary": "Retrieve the all informations, incluing fragment-IDs and its labels, of the document. Its like a complete table-of-contents.",
+        "operationId": "getFragsInfo",
+        "description": "Retrieves the list of ID-label of all the fragments of specified document.\n",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/docId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "results matching criteria",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "description": "has not found the input docId."
+          },
+          "416": {
+            "description": "document's DTD not compatible with fragment standards."
+          }
+        }
+      }
+    },
+    "/getfrag-info/{docId}/l/{level}": {
+      "get": {
+        "tags": [
+          "retriever"
+        ],
+        "summary": "Retrieve  all the informations, incluing fragment-IDs and its labels, of the document. Its like a complete table-of-contents.",
+        "operationId": "infoAtLevel",
+        "description": "Retrieves the list of ID-label of all the fragments of specified document.\n",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/docId"
+          },
+          {
+            "$ref": "#/parameters/level"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "results matching criteria",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "description": "has not found the input docId."
+          },
+          "416": {
+            "description": "document's DTD not compatible with fragment standards."
+          }
+        }
+      }
+    },
+    "/getfrag-info/{docId}/{fragId}/": {
+      "get": {
+        "tags": [
+          "retriever"
+        ],
+        "summary": "info of fragments into the specified fragment.",
+        "operationId": "infoOfFrag",
+        "description": "Retrieve the all informations, incluing fragment-IDs and its labels, of the documentm, about into the fragId.\n",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/docId"
+          },
+          {
+            "$ref": "#/parameters/fragId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "results matching criteria",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "description": "has not found the input docId."
+          },
+          "416": {
+            "description": "document's DTD not compatible with fragment standards."
+          }
+        }
+      }
+    },
+    "/getfrag-info/{docId}/l/{level}/{fragId}/": {
+      "get": {
+        "tags": [
+          "retriever"
+        ],
+        "summary": "info of fragments into the specified fragment.",
+        "operationId": "infoAtLevelOfFrag",
+        "description": "Retrieve the all informations, incluing fragment-IDs and its labels, of the documentm, about into the fragId.\n",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/docId"
+          },
+          {
+            "$ref": "#/parameters/level"
+          },
+          {
+            "$ref": "#/parameters/fragId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "results matching criteria",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "description": "has not found the input docId."
+          },
+          "416": {
+            "description": "document's DTD not compatible with fragment standards."
+          }
+        }
+      }
+    }
+  },
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "host": "api.ok.org.br"
+}
